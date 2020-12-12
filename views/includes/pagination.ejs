@@ -1,0 +1,27 @@
+<nav aria-label="Page navigation example " class="d-flex justify-content-center"> 
+    <ul class="pagination">
+      <li class="page-item"> 
+          <% if (currentPage !== 1 && previousPage !== 1) { %>
+            <a class="page-link" href="/admin/product?page=1">1</a>
+          <% } %>
+      </li>
+      <li class="page-item">
+        <% if (hasPreviousPage) { %>
+          <a class="page-link" href="/admin/product?page=<%= previousPage %>"><%= previousPage%></a>
+        <% } %>
+      </li>
+      <li class="page-item">
+          <a class="page-link active" href="/admin/product?page=<%= currentPage %>"><%= currentPage%> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item">
+            <% if (hasNextPage) { %>
+              <a class="page-link" href="/admin/product?page=<%= nextPage %>"><%= nextPage%></a>
+            <% } %>
+          </li>
+      <li class="page-item disabled"> 
+        <% if (lastPage !== currentPage && nextPage !== lastPage) { %>
+            <a class="page-link" href="/admin/product?page=<%= lastPage %>"><%= lastPage %></a>
+        <% } %>
+      </li>
+    </ul>
+  </nav>  

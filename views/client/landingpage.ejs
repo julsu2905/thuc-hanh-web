@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<%- include('../includes/header.ejs')   %>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+<link rel="stylesheet" href="/css/client_misc.css">
+<link rel="stylesheet" href="/css/client_styles.css">
+<link rel="stylesheet" href="/css/landingpage.css">
+
+<body>
+    <div class="site-main" id="sTop">
+        <div class="site-header">
+            <div class="main-header">
+                <div class="container">
+                    <div id="menu-wrapper">
+                        <div class="row">
+                            <nav class="navbar navbar-inverse" role="navigation">
+                                <div class="navbar-header">
+                                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse"
+                                        data-target="#main-nav">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a href="#top" class="navbar-brand">YourSMhome</a>
+                                    <div id="main-nav" class="collapse navbar-collapse">
+                                        <ul class="menu-first nav navbar-nav" style="margin-right: 20px;">
+                                            <li class="active"><a href="#">trang chủ</a></li>
+                                            <li><a href="#about">Sản phẩm</a></li>
+                                            <li><a href="#portfolio">Công ty</a></li>
+                                            <li><a href="#blog">Nhà mẫu</a></li>
+                                            <li><a href="#contact-us">Liên hệ</a></li>
+
+                                        </ul>
+                                    </div> <!-- /.main-menu -->
+                                </div>
+                            </nav>
+                        </div> <!-- /.row -->
+                    </div> <!-- /#menu-wrapper -->
+                </div> <!-- /.container -->
+            </div> <!-- /.main-header -->
+        </div> <!-- /.site-header -->
+    </div> <!-- /.site-main -->
+
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="banner-content">
+                        <h6>Your home</h6>
+                        <h2>Is coming alive</h2>
+                        <ul class="buttons">
+                            <li>
+                                <div class="primary-button">
+                                    <a href="#about">Xem thêm</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Your Smart Home is here!</h4>
+                    <h6>Gặp gỡ công nghệ của tương lai cùng đội ngũ chuyên nghiệp </h6>
+                    <div class="border-button"><a href="#portfolio">Tìm hiểu thêm</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="about" class="page-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item first-service">
+                        <div class="icon">
+                            <img src="img/first-service-icon.png" alt="">
+                        </div>
+                        <h4>Mobile Ready</h4>
+                        <p>Tiện lợi, nhanh chóng, ngôi nhà của bạn
+                            được gói gọn trong chiếc smartphone
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item second-service">
+                        <div class="icon">
+                            <img src="img/second-service-icon.png" alt="">
+                        </div>
+                        <h4>Công nghệ tiên tiến</h4>
+                        <p>Các sản phẩm được phát triển từ những đối tác công nghệ lớn trên toàn thế giới
+                            đảm bảo đẳng cấp khác biệt trong từng chi tiết
+                            đối với các đối thủ trên thị trường
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item third-service">
+                        <div class="icon">
+                            <img src="img/third-service-icon.png" alt="">
+                        </div>
+                        <h4>Lắp đặt, bảo trì nhanh chóng</h4>
+                        <p>Đội ngũ chuyên nghiệp với kinh nghiệm hơn 15 năm trong ngành IoT
+                            sẽ mang đến cho bạn trải nghiệm trên cả tuyệt vời trong việc lắp đặt
+                            cũng như hỗ trợ, bảo trì
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="second-tabs-content what-we-do">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Sản phẩm</h4>
+                        <p>Sản phẩm đa dạng: đèn LED thông minh, công tắc thông minh, điều khiển hồng ngoại...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <ul class="tabs clearfix" data-tabgroup="second-tab-group">
+                                <% i = 1; %>
+                                <% categories.forEach((category)=>{ %>
+                                <li class="col-md-15 col-sm-12 col-xs-12">
+                                    <a href="#<%= category.name %>" <% if(i==1){ %>class="active" <% } %>>
+                                        <div class="list-item">
+                                            <div class="icon">
+                                                <img src="img/<%= category.icon %>" alt="<%= category.name %>">
+                                            </div>
+                                            <h4><%= category.name %></h4>
+                                        </div>
+                                    </a>
+                                </li>
+                                <% i++; }) %>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <section id="second-tab-group" class="tabgroup">
+                            <% categories.forEach((category)=>{ %>
+                            <div id="<%= category.name %>">
+                                <div class="row">
+                                    <div class="tab-content-services">
+                                        <div class="col-md-6">
+                                            <% category.products.forEach((product)=>{ %>
+                                            <!-- Start	Product details -->
+                                            <div class="product-details">
+                                                <!-- 	Product Name -->
+                                                <h1><%= product.name %></h1>
+                                                <!-- 		<span class="hint new">New</span> -->
+                                                <!-- 		<span class="hint free-shipping">Free Shipping</span> -->
+                                                <!-- 		the Product rating -->
+                                                <span class="hint-star star">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                </span>
+                                                <!-- The most important information about the product -->
+                                                <p class="information"><%= product.description %></p>
+                                                <!-- 		Control -->
+                                                <div class="control">
+                                                    <!-- Start Button buying -->
+                                                    <button class="btn">
+                                                        <!-- 		the Price -->
+                                                        <span class="price"><%= product.sellprice %>đ</span>
+                                                        <!-- 		shopping cart icon-->
+                                                        <span class="shopping-cart"><i class="fa fa-shopping-cart"
+                                                                aria-hidden="true"></i></span>
+                                                        <!-- 		Buy Now / ADD to Cart-->
+                                                        <span class="buy" href="products/<%= product.name %>">Xem
+                                                            thêm</span>
+                                                    </button>
+                                                    <!-- End Button buying -->
+                                                </div>
+                                            </div>
+                                            <!-- 	End	Product details   -->
+                                            <!-- 	Start product image & Information -->
+                                            <div class="product-image">
+                                                <img src="img/products/<%= product.photo %>" alt="images">
+                                            </div>
+                                            <!--  End product image  -->
+                                            <% }) %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Gặp gỡ đội ngũ nhân viên của công ty</h4>
+                        <p>Những thành viên có những đóng góp xuất sắc cho công ty</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="owl-portfolio" class="owl-carousel owl-theme imageGallery1">
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" title=""><img src="img/first-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/second-portfolio-big.jpg" title=""><img src="img/second-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/third-portfolio-big.jpg" title=""><img src="img/third-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/fourth-portfolio-big.jpg" title=""><img src="img/fourth-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" data-lightbox="image-1"><img
+                                    src="img/first-portfolio-item.jpg"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/second-portfolio-big.jpg" title=""><img src="img/second-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" title=""><img src="img/first-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/third-portfolio-big.jpg" title=""><img src="img/third-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" data-lightbox="image-1"><img
+                                    src="img/first-portfolio-item.jpg"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/fourth-portfolio-big.jpg" title=""><img src="img/fourth-portfolio-item.jpg"
+                                    alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="tabs-content" id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Những căn hộ đang chờ đón bạn</h4>
+                        <p>Chung cư, căn hộ cao cấp, đầy đủ tiện nghi tại TP.Hồ Chí Minh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <div class="col-md-6">
+                        <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                            <li><a href="#tab1" class="active">
+                                    shoreditch wolf ethical hashtag
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Admin</li>
+                                        <li><i class="fa fa-calendar"></i>14 November 2020</li>
+                                        <li><i class="fa fa-wechat"></i>12 Comments</li>
+                                    </ul>
+                                </a></li>
+                            <li><a href="#tab2">
+                                    kickstarter master cleanse scenester
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Krist</li>
+                                        <li><i class="fa fa-calendar"></i>08 November 2020</li>
+                                        <li><i class="fa fa-wechat"></i>16 Comments</li>
+                                    </ul>
+                                </a></li>
+                            <li><a href="#tab3">
+                                    Seitan flexitarian prism shaman
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Nanny</li>
+                                        <li><i class="fa fa-calendar"></i>02 November 2020</li>
+                                        <li><i class="fa fa-wechat"></i>9 Comments</li>
+                                    </ul>
+                                </a></li>
+                            <li><a href="#tab4">
+                                    Fashion axe selvage everyday carry
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Krist</li>
+                                        <li><i class="fa fa-calendar"></i>28 October 2020</li>
+                                        <li><i class="fa fa-wechat"></i>11 Comments</li>
+                                    </ul>
+                                </a></li>
+                            <li><a href="#tab5">
+                                    chambray truffaut godard flannel
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Admin</li>
+                                        <li><i class="fa fa-calendar"></i>22 October 2020</li>
+                                        <li><i class="fa fa-wechat"></i>24 Comments</li>
+                                    </ul>
+                                </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="first-tab-group" class="tabgroup">
+                            <div id="tab1">
+                                <img src="img/blog-post-1.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>shoreditch wolf ethical hashtag</h4>
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Admin</li>
+                                        <li><i class="fa fa-calendar"></i>14 November 2020</li>
+                                        <li><i class="fa fa-wechat"></i>12 Comments</li>
+                                    </ul>
+                                    <p>La croix kombucha bespoke dreamcatcher, tumeric tbh quinoa micro dosing gastro
+                                        pub. 8-bit freegan chartreuse synth jean shorts farm to table, cold pressed
+                                        authen tic. Mixtape hella beard meditation, Pok pok meh tote bag single-origin
+                                        coffee, everyday carry unicorn raw denim distillery cray pork belly taxidermy
+                                        organic polaroid.</p>
+                                    <div class="primary-button"><a href="#contact-us">Continue Reading</a></div>
+                                </div>
+                            </div>
+                            <div id="tab2">
+                                <img src="img/blog-post-2.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>kickstarter master cleanse scenester</h4>
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Krist</li>
+                                        <li><i class="fa fa-calendar"></i>08 November 2020</li>
+                                        <li><i class="fa fa-wechat"></i>16 Comments</li>
+                                    </ul>
+                                    <p>Artisan messenger bag gochujang tote bag, leggings synth literally unicorn street
+                                        art ramps slow-carb everyday carry mixtape. Tbh synth hell of kombucha hot
+                                        chicken dreamcatcher gentrify organic asymmetrical gastropub VHS photo booth raw
+                                        denim. Vape edison bulb glossier air plant heirloom readymade bitters air plant
+                                        pug.</p>
+                                    <div class="primary-button"><a href="#contact-us">Continue Reading</a></div>
+                                </div>
+                            </div>
+                            <div id="tab3">
+                                <img src="img/blog-post-3.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Seitan flexitarian prism shaman</h4>
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Nanny</li>
+                                        <li><i class="fa fa-calendar"></i>02 November 2020</li>
+                                        <li><i class="fa fa-wechat"></i>9 Comments</li>
+                                    </ul>
+                                    <p>Cronut slow-carb 90's irony cred fashion axe jean shorts cardigan wayfarers.
+                                        Typewriter retro plaid jianbing 90's taiyaki, sriracha vegan fam. Letterpress
+                                        cornhole mixtape ethical celiac distillery echo park. Selvage readymade cornhole
+                                        vape. Semiotics iPhone mumblecore, sartorial succulents slow-carb offal pabst
+                                        trust fund brunch.</p>
+                                    <div class="primary-button"><a href="#contact-us">Continue Reading</a></div>
+                                </div>
+                            </div>
+                            <div id="tab4">
+                                <img src="img/blog-post-4.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Fashion axe selvage everyday carry</h4>
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Krist</li>
+                                        <li><i class="fa fa-calendar"></i>28 October 2020</li>
+                                        <li><i class="fa fa-wechat"></i>11 Comments</li>
+                                    </ul>
+                                    <p>La croix kombucha bespoke dreamcatcher, tumeric tbh quinoa micro dosing gastro
+                                        pub. 8-bit freegan chartreuse synth jean shorts farm to table, cold pressed
+                                        authen tic. Mixtape hella beard meditation, Pok pok meh tote bag single-origin
+                                        coffee, everyday carry unicorn raw denim distillery cray pork belly taxidermy
+                                        organic polaroid.</p>
+                                    <div class="primary-button"><a href="#contact-us">Continue Reading</a></div>
+                                </div>
+                            </div>
+                            <div id="tab5">
+                                <img src="img/blog-post-5.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>chambray truffaut godard flannel</h4>
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>Admin</li>
+                                        <li><i class="fa fa-calendar"></i>22 October 2020</li>
+                                        <li><i class="fa fa-wechat"></i>24 Comments</li>
+                                    </ul>
+                                    <p>Cronut slow-carb 90's irony cred fashion axe jean shorts cardigan wayfarers.
+                                        Typewriter retro plaid jianbing 90's taiyaki, sriracha vegan fam. Letterpress
+                                        cornhole mixtape ethical celiac distillery echo park. Selvage readymade cornhole
+                                        vape. Semiotics iPhone mumblecore, sartorial succulents slow-carb offal pabst
+                                        trust fund brunch.</p>
+                                    <div class="primary-button"><a href="#contact-us">Continue Reading</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Contact Us</h4>
+                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In
+                            hac habitasse platea dictumst.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="contact" action="#" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Name..."
+                                        required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="email" type="email" class="form-control" id="email"
+                                        placeholder="Email..." required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="subject" type="text" class="form-control" id="subject"
+                                        placeholder="Subject..." required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="phone" type="phone" class="form-control" id="phone"
+                                        placeholder="Phone..." required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <textarea name="message" rows="6" class="form-control" id="message"
+                                        placeholder="Message..." required=""></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="btn">Send your message</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div id="map">
+                        <!-- How to change your own map point
+        1. Go to Google Maps
+        2. Click on your location point
+        3. Click "Share" and choose "Embed map" tab
+        4. Copy only URL and paste it within the src="" field below
+-->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945"
+                            width="100%" height="395" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <p>Copyright &copy; 2020 Company Name <br>
+                        Design: TemplateMo</p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <ul class="social-icons">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-md-offset-2 col-sm-12">
+                    <div class="back-to-top">
+                        <a href="#top">
+                            <i class="fa fa-angle-up"></i>
+                            back to top
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <%- include('../includes/scriptlanding.ejs') %>
+    <%- include('../includes/script.ejs') %>
+    <%- include('../includes/end.ejs') %>

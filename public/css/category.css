@@ -1,0 +1,16 @@
+body {
+    margin-top: 50px;
+    justify-content: center;
+}
+
+table th {
+    padding : 20px;
+    border: 1px solid black;
+    min-width: max-content;
+}
+
+table td{
+    padding : 20px;
+    border: 1px solid black;
+    min-width: max-content;
+}

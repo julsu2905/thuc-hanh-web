@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../includes/header.ejs')   %>
+<link rel="stylesheet" href="/css/category.css">
+
+<body>
+    <div class="container">
+        <form class="form-cat" enctype="multipart/form-data">
+            <div class="col-md-6"> Name:<input class="form-control" type="text" name="name" id="catName" required>
+                Category Icon:<input class="form-control" type="file" name="categoryicon" id="categoryicon">
+                <input class="btn btn-primary" type="submit" id="createCat">
+            </div>
+            <div class="col-md-6"></div>
+        </form>
+
+        <% if(categories){ i=1 %>
+        <table>
+            <thead>
+                <th>STT</th>
+                <th>Category</th>
+                <th>Icon</th>
+            </thead>
+            <tbody>
+                <% categories.forEach((category)=>{ %>
+                <tr>
+                    <td><%= i++ %></td>
+                    <td><%= category.name %></td>
+                    <td><img src="#" alt="images"></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <% } %>
+    </div>
+    <%- include('../includes/script.ejs') %>
+    <%- include('../includes/end.ejs')   %>

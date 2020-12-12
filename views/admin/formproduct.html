@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../includes/header.ejs')   %>
+<link rel="stylesheet" href="/css/category.css">
+
+<body>
+    <div class="container">
+        <form class="form-pro" enctype="multipart/form-data">
+            <div class="col-md-6">
+                Product Name:<input class="form-control" type="text" name="name" id="name" required>
+                <br>
+                Category:<select id="category">
+                    <option value="0">Chọn loại sản phẩm</option>
+                    <% categories.forEach((category)=>{ %>
+                    <option value="<%= category.id %>"><%= category.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="col-md-6">
+                Photo:<input type="file" class="form-control" name="" id="">
+                Price: <input class="form-control" type="number" name="price" id="price">
+                Color: <input class="form-control" type="text" name="color" id="color">
+            </div>
+            <input class="btn btn-primary" type="submit" id="createCat" value="create">
+        </form>
+        <br>
+        <form class="form-search">
+            <input class="form-control" type="text" placeholder="Type in..." id="txtSearch"> <button class="btn-danger" type="submit" value="search">Search</button>
+        </form>
+        <br>
+        <% if(products){ %>
+        <table id="records_table">
+            <thead>
+                <th>STT</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Photo</th>
+                <th>Price</th>
+                <th>Color</th>
+            </thead>
+            <tbody id="table_content">
+                <% products.forEach((product)=>{ %>
+                <tr>
+                    <td><%= index++ %></td>
+                    <td><%= product.name %></td>
+                    <td><%= product.category.name %></td>
+                    <td><img src="#" alt="images"></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.color %></td>
+                    <td class="column-verticallineMiddle form-inline">
+                        <form action="/admin/product/delete/<%= product.id %>" method="POST">
+                            <button type="submit" class="alert-danger"><i class="fas fa-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <%- include('../includes/pagination') %>
+        <% } %>
+    </div>
+
+    <%- include('../includes/script.ejs') %>
+    <%- include('../includes/end.ejs')   %>
